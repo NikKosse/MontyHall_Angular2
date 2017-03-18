@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="starter-template">
+
+        <p>How many times do you want the simulation to run?</p>
+        <input type="text" class="form-control" #timesToRun (keyup)="setTimesToRun(timesToRun.value)">
+        <p>Do you want to switch doors during the simulation?</p>
+        <div class="checkbox">
+            <label><input type="radio" value="" name="optradio" (click)="setSwitchDoors(true)">Yes</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="radio" value="" name="optradio" (click)="setSwitchDoors(false)">No</label>
+        </div>
+        <br/>
+        <br/>
+        <button id="runSimulation" class="btn" (click)="runSimulation()">Click here to run simulation!</button>
+
+        <div *ngIf="showResults">
+            <p>Results: </p>
+            <p>You won: {{numberOfWins | number}}</p>
+            <p>You lost: {{numberOfLosses | number}}</p>
+            <p>Your won: {{percentWins | percent}} of the time!</p>
+            <button class="btn" (click)="revealExplanation()">Click here to reveal an explanation</button>
+            <br>
+            <br>
+            <div *ngIf="showExplanation">
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/4Lb-6rxZxx0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

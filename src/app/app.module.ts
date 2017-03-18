@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MontyHallComponent} from './montyHall.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MontyHallComponent
   ],
   imports: [
     BrowserModule,
